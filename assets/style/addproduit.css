@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hind&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* NAVBAR */
+
+#navigationbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: #E0E0E0;
+    height: 3%;
+    width: 100%;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    font-family: 'poppins';
+}
+
+#navigationbar h1 {
+    font-family: 'poppins';
+    color: #3F8000;
+    margin-right: 46%;
+    margin-top: -5px;
+}
+
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+}
+
+#navbar li {
+    list-style: none;
+    padding: 0 20px;
+    position: relative;
+}
+
+#navbar li a {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #333333;
+    transition: 0.3s ease;
+}
+
+.logo {
+    width: 80px;
+    margin-left: 2em;
+}
+
+#navbar li a:hover,
+#navbar li a.active {
+    color: #3F8000;
+}
+
+#navbar li a.active::after,
+#navbar li a:hover::after {
+    content: "";
+    width: 30%;
+    height: 2px;
+    background-color: #3F8000;
+    position: absolute;
+    bottom: -4px;
+    left: 20px;
+}
+
+.fa-times {
+    display: none;
+}
+
+.open .fa-times {
+    display: block;
+}
+
+.open .fa-bars {
+    display: none;
+}
+
+.open .navbar {
+    transform: translateX(0);
+}
+
+.open #navigationbar::before {
+    opacity: 1;
+    transform: scale(1);
+}
+
+
+/* FIN NAVBAR */
+
+.container {
+    display: flex;
+    margin-top: 6%;
+    margin-bottom: 6%;
+    justify-content: space-around;
+}
+
+.formulaire {
+    align-self: center;
+    background-color: #E0E0E0;
+    border: #3F8000 solid 4px;
+    border-radius: 3px;
+    font-family: 'Hind';
+    width: 30%;
+    height: 70%;
+    padding: 1%;
+    margin-right: 5%;
+    box-shadow: 5px 9px 12px 1px rgba(0, 0, 0, 0.29);
+}
+
+.formulaire h3 {
+    font-family: 'poppins';
+    text-align: center;
+    color: #3F8000;
+    font-weight: bolder;
+    margin-bottom: 6%;
+}
+
+#img_pharma {
+    width: 80%;
+    margin-left: 5%;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+form input {
+    width: 50%;
+    margin-bottom: 1%;
+    font-family: 'hind';
+}
+
+p {
+    margin-bottom: 5px;
+}
+
+form button {
+    width: 150%;
+    height: 30px;
+    border-radius: 4px;
+    border: #3F8000 2px solid;
+    font-family: 'hind';
+    font-weight: bold;
+    color: #3F8000;
+}
+
+.btn {
+    align-self: center;
+}
+
+form button:hover {
+    cursor: pointer;
+}
+
+form select {
+    width: 50%;
+    font-family: 'hind';
+}
+
+
+/* FOOTER */
+
+.footer {
+    height: 3%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #E0E0E0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logo-res {
+    width: 40px;
+    height: 40px;
+}
+
+.footer a {
+    font-family: 'poppins';
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #333333;
+    align-items: center;
+}
+
+.reseaux {
+    display: flex;
+    width: 40%;
+    justify-content: space-evenly;
+    align-items: center;
+}
