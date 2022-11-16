@@ -5,16 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pharma & Cie - Ajouter un produit</title>
-    <link rel="stylesheet" href="../assets/style/addproduit.css">
+    <link rel="stylesheet" href="./assets/style/addproduit.css">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 </head>
 <body>
     <header>
-        <?php include '../view/viewNavbar.php' ?>
+  
         </header>
         <div class="container">
             <div class="image">
-                <img src="../assets/image/connexion.jpg" alt="Image pharmacie" id="img_pharma">
+                <img src="./assets/image/connexion.jpg" alt="Image pharmacie" id="img_pharma">
             </div>
             <div class="formulaire">
                 <h3> Ajout de produit</h3>
@@ -27,8 +27,9 @@
                     <input type="file" accept="image/png, image/jpeg" name="image_produit" required>
                     <p> Catégorie du produit :</p>
                     <select name="id_categorie">
-                    <?php foreach($liste as $value)
-                    echo "<option value=".$value[0]['id_cat_prod']."> ".$value[0]['nom_produit']."</option>"; ?>
+                    <?php foreach($liste as $key => $value) :?>
+                        <option value="<?=$value->id_cat_prod?>"><?=$value->nom_cat?></option>
+                    <?php endforeach;?>
                     </select>
                     <p> Description du produit :</p>
                     <textarea name="desc_produit" id="desc" cols="30" rows="7" placeholder="Ceci est une description"></textarea>
@@ -37,10 +38,11 @@
                         <button type="submit" name="create">Enregistrer</button>
                     </div>
                 </form>
+                <p><?= $message ?></p>
             </div>
         </div>
         <footer> 
-            <?php include '../view/viewFooter.php' ?>
+            <?php include './view/viewFooter.php' ?>
         </footer>
 </body>
 </html>

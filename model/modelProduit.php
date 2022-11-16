@@ -1,11 +1,11 @@
 <?php
 class Produit {
-  private $id;
-  private $nomProd;
-  private $prix;
-  private $img;
-  private $id_cat;
-  private $desc;
+  private $id_produit;
+  private $nom_produit;
+  private $prix_produit;
+  private $image_produit;
+  private $id_cat_prod;
+  private $desc_produit;
 
   public function __construct($nom,$prix,$img,$categorie,$desc) {
     $this->nom_produit = $nom;
@@ -18,40 +18,40 @@ class Produit {
  // Getter and setter
 
   public function getId():int{
-  return $this -> id_prod;
+  return $this->id_produit;
 }
 public function getNomProd():string{
-  return $this -> nom_produit; 
+  return $this->nom_produit; 
 }
 public function getPrixProd():float{
-  return $this -> prix_produit;
+  return $this->prix_produit;
 }
 public function getImgProd():string{
-  return $this -> image_produit;
+  return $this->image_produit;
 }
 public function getCategorieProd():string{
-  return $this -> id_cat_prod;
+  return $this->id_cat_prod;
 }
 public function getDescProd():string{
-  return $this -> desc_produit;
+  return $this->desc_produit;
 }
 public function setId($id):void{
-  $this -> id_prod = $id;
+  $this->id_produit = $id;
 }
 public function setNomProd($nom):void{
-  $this -> nom_produit = $nom;
+  $this->nom_produit = $nom;
 }
 public function setPrixProd($prix):void{
-$this -> prix_produit = $prix;
+$this->prix_produit = $prix;
 }
 public function setImageProd($img):void{
-  $this -> image_produit = $img;
+  $this->image_produit = $img;
   }
 public function setCatProd($categorie):void{
-$this -> id_cat_prod = $categorie;
+$this->id_cat_prod = $categorie;
 }
 public function setDescProd($desc):void{
-$this -> desc_produit = $desc;
+$this->desc_produit = $desc;
 }
   public function __get($property) {
     if(property_exists($this, $property)) {
@@ -67,11 +67,11 @@ $this -> desc_produit = $desc;
     try{
         $req = $bdd->prepare('INSERT INTO produit(nom_produit,prix_produit,image_produit,id_cat_prod,desc_produit) VALUES (:nom_produit,:prix_produit,:image_produit,:id_cat_prod,:desc_produit)');
         $req->execute(array(
-            'nom_produit' => $this->__get('nom'),
-            'prix_produit' => $this->__get('prix'),
-            'image_produit' => $this->__get('img'),
-            'id_cat_prod' => $this->__get('id_cat_prod'),
-            'desc_produit' => $this->__get('desc'),
+            'nom_produit' => $this->getNomProd(),
+            'prix_produit' => $this->getPrixProd(),
+            'image_produit' => $this->getImgProd(),
+            'id_cat_prod' => $this->getCategorieProd(),
+            'desc_produit' => $this->getDescProd(),
             ));
     }
     catch(Exception $e)
