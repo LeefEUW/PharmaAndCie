@@ -47,4 +47,6 @@ constraint fk_id_categorie_art foreign key (id_categorie_art) references categor
 
 
 
+SELECT * FROM produit natural join categorie_produit where id_cat_prod = 2;
+
 
