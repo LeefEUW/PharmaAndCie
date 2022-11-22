@@ -101,8 +101,23 @@ public function findProdById($bdd) {
 
 public function showAllProduits($bdd) {
   try{
-    $req = $bdd->prepare('SELECT nom_produit, prix_produit, image_produit,,desc_produit FROM produits');
+    $req = $bdd->prepare('SELECT nom_produit, prix_produit, image_produit,desc_produit FROM produit');
     $req->execute();
+    $data = $req->fetchAll(PDO::FETCH_OBJ);
+    return $data;
+}
+catch(Exception $e)
+{
+    //affichage d'une exception en cas d’erreur
+    die('Erreur : '.$e->getMessage());
+}
+}
+public function ShowByCat($bdd, $categorie) {
+  try{
+    $req = $bdd->prepare('SELECT nom_produit, prix_produit, image_produit, desc_produit FROM produit WHERE id_cat_prod = :id_cat_prod');
+    $req->execute(array(
+        'id_cat_prod' => $categorie
+        ));
     $data = $req->fetchAll(PDO::FETCH_OBJ);
     return $data;
 }

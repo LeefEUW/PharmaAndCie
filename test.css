@@ -1,0 +1,198 @@
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Hind&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        /* NAVBAR */
+        
+        #navigationbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 2vh;
+            padding-bottom: 2vh;
+            background: #E0E0E0;
+            height: 3%;
+            width: 100%;
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+            font-family: 'poppins';
+        }
+        
+        #navbar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 5vh;
+        }
+        
+        #navbar li {
+            list-style: none;
+            padding: 0 20px;
+            position: relative;
+        }
+        
+        #navbar li a {
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            color: #333333;
+            transition: 0.3s ease;
+        }
+        
+        .logo {
+            width: 30vh;
+            margin-left: 2em;
+        }
+        
+        #navbar li a:hover,
+        #navbar li a.active {
+            color: #3F8000;
+        }
+        
+        #navbar li a.active::after,
+        #navbar li a:hover::after {
+            content: "";
+            width: 30%;
+            height: 2px;
+            background-color: #3F8000;
+            position: absolute;
+            bottom: -4px;
+            left: 20px;
+        }
+        
+        .fa-times {
+            display: none;
+        }
+        
+        .open .fa-times {
+            display: block;
+        }
+        
+        .open .fa-bars {
+            display: none;
+        }
+        
+        .open .navbar {
+            transform: translateX(0);
+        }
+        
+        .open #navigationbar::before {
+            opacity: 1;
+            transform: scale(1);
+        }
+        /* FIN NAVBAR */
+        
+        .containerHaut {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            margin-top: 5vh;
+            align-items: center;
+            gap: 3vh;
+            margin-bottom: 5vh;
+        }
+        
+        .containerBas {
+            display: flex;
+            margin-top: 5vh;
+            flex-direction: row;
+            flex-wrap: wrap;
+            margin-bottom: 5vh;
+            gap: 5vh;
+            margin-left: 2vw;
+        }
+        
+        h1 {
+            font-family: 'poppins';
+            font-size: 3em;
+            color: #3F8000;
+            font-weight: bolder;
+        }
+        
+        .card {
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0px 0px 8px 4px rgba(0, 0, 0, 0.15);
+            padding: 1%;
+            width: 22%;
+            height: 30%;
+        }
+        
+        .card img {
+            width: 100%;
+            margin-bottom: 1vh;
+        }
+        
+        .card h3 {
+            font-family: 'poppins';
+            margin-bottom: 1%;
+            margin-top: 2%;
+            color: #3F8000;
+        }
+        
+        .card h4 {
+            font-family: 'poppins';
+            margin-bottom: 2%;
+        }
+        
+        .card p {
+            font-family: 'hind';
+        }
+        
+        hr {
+            color: #3F8000;
+            height: 3px;
+            border: none;
+            background-color: #3F8000;
+            margin-top: 1vh;
+        }
+        /* FOOTER */
+        
+        .footer {
+            height: 3%;
+            padding-top: 2vh;
+            padding-bottom: 2vh;
+            background-color: #E0E0E0;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+        }
+        
+        .logo-res {
+            width: 40px;
+            height: 40px;
+        }
+        
+        .footer a {
+            font-family: 'poppins';
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            color: #333333;
+            align-items: center;
+        }
+        
+        .reseaux {
+            display: flex;
+            width: 40%;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        
+        @media screen and (max-width: 400px) {
+            #navigationbar {
+                display: flex;
+                flex-direction: column;
+            }
+            #navbar {
+                display: flex;
+                margin-top: 10px;
+                gap: 10px;
+                flex-direction: column;
+            }
+        }

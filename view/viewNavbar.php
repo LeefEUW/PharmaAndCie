@@ -2,12 +2,12 @@
 
 <div id="navigationbar">
 
-    <a href="./"><img src="../assets/image/logoPharma.png" class="logo" alt="Logo du site"></a>
-    <h1>Pharma & Cie </h1>
+    <a href="./"><img src="./assets/image/logo.png" class="logo" alt="Logo du site"></a>
     <div>
         <ul id="navbar">
             <li><a href="">Accueil</a></li>
-            <li><a href="">Nos produits</a></li>
+            <li><a href="/PharmaAndCie/addProduit">Ajouter un produit</a></li>
+            <li><a href="/PharmaAndCie/produits">Nos produits</a></li>
             <li><a href="">Articles</a></li>
             <li><a href=""><i class="uil uil-user"></i></a></li>
         </ul>

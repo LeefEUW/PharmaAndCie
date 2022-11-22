@@ -13,8 +13,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
     background: #E0E0E0;
     height: 3%;
     width: 100%;
@@ -22,18 +22,11 @@
     font-family: 'poppins';
 }
 
-#navigationbar h1 {
-    font-family: 'poppins';
-    color: #3F8000;
-    margin-right: 46%;
-    margin-top: -5px;
-}
-
 #navbar {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: 8px;
+    margin-right: 5vh;
 }
 
 #navbar li {
@@ -52,7 +45,7 @@
 }
 
 .logo {
-    width: 80px;
+    width: 30vh;
     margin-left: 2em;
 }
 
@@ -104,13 +97,13 @@
 }
 
 .formulaire {
-    align-self: center;
+    /* align-self: center; */
     background-color: #E0E0E0;
     border: #3F8000 solid 4px;
     border-radius: 3px;
     font-family: 'Hind';
     width: 30%;
-    height: 70%;
+    height: 30%;
     padding: 1%;
     margin-right: 5%;
     box-shadow: 5px 9px 12px 1px rgba(0, 0, 0, 0.29);
@@ -168,13 +161,26 @@ form select {
     font-family: 'hind';
 }
 
+#message {
+    font-family: 'hind';
+    margin-top: 3vh;
+    color: #000000;
+    font-weight: bolder;
+    text-align: center;
+    font-size: 18px;
+}
+
 
 /* FOOTER */
 
 .footer {
-    height: 3%;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 10vh;
+    width: 100%;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
     background-color: #E0E0E0;
     display: flex;
     flex-direction: row;

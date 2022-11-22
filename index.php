@@ -8,43 +8,25 @@
     /*--------------------------ROUTER -----------------------------*/
     //test de la valeur $path dans l'URL et import de la ressource
 
-    include './view/viewNavbar.php';
-
-
-
-
     switch($path){
         //route /PharmaAndCie -> ./controller/controllerAccueil.php
         case $path === "/PharmaAndCie":
             include './controller/controlerAccueil.php';
 		    break ;
-        //route /evalmvc/showArticle -> ./controler/controler_show_all_article.php
+        //route /PharmaAndCie/connexion -> ./controller/controllerConnexion.php
         case $path === "/PharmaAndCie/connexion":
             include './controller/controlerConnexion.php';
 		    break ;
-        //route /evalmvc/showArticle -> ./controler/controler_show_all_article.php
-        case $path === "/PharmaAndCie/ajouter-produit":
+        //route /PharmaAndCie/addProduit -> ./controller/controllerAddProd.php
+        case $path === "/PharmaAndCie/addProduit":
             include './controller/controllerAddProd.php';
+		    break ;        
+            // route /PharmaAndCie/produits -> ./controller/controllerAllProduit.php
+        case $path === "/PharmaAndCie/produits":
+            include './controller/controllerAllProduit.php';
 		    break ;
-        //route /evalmvc/modifyArticle -> ./controler/controler_modify_article.php
-        case $path === "/PharmaAndCie/modifyArticle": 
-            include './controller/controler_modify_article.php';
-		    break ;
-        //route /evalmvc/deleteArticle -> ./controler/controler_delete_article.php
-        case $path === "/PharmaAndCie/deleteArticle":
-            include './controller/controler_delete_article.php';
-		    break ;
-        //route /evalmvc/getApi -> ./api/api.php
-        case $path === "/PharmaAndCie/getApi":
-            include './api/api.php';
-		    break ;
-        //route /evalmvc/apiAllArticle -> ./controler/controler_api_all_article.php
-        case $path === "/PharmaAndCie/apiAllArticle":
-            include './controler/controler_api_all_article.php';
-		    break ;
-        
-        //route /evalmvc/error -> ./error.php
-        case $path === "/pharma/error":
+        //route /PharmaAndCie/error -> ./error.php
+        case $path === "/PharmaAndCie/error":
             include './error.php';
 		    break ;
         //route en cas d'erreur

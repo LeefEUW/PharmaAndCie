@@ -1,31 +1,32 @@
 <?php
-    //import
-    include './utils/connectBdd.php';
-    include './model/model_article.php';
-    include './manager/manager_article.php';
-    include './vue/view_show_all_article.php';
-    //message 
-    $message = ""; 
-    //instance de l'objet ManagerArticle
-    $art = new ManagerPr(null, null);
-    //stocker le résultat de la méthode showAllArticle
-    $liste = $art->showAllArticle($bdd);
-    //test si le tableau d'article est vide
-    if(empty($liste)){
-        $message = '<a href="/secu/createArticle">Veuillez ajouter un article</a>';
-    }
-    //test sinon (tableau est rempli)
-    else{
-        //parcourir le tableau (version tableau associatif)
-        foreach($liste as $value){
-            echo "";
-        }
-    }
-    echo $message;
+//import
+include './utils/connectBdd.php';
+include './model/modelCategorieProduit.php';
+include './model/modelProduit.php';
 
-    //exemple si on souhaite stocker le résultat d'un article dans un objet
-    // $art->setIdArt($liste[0]['id_article']);
-    // $art->setNomArt($liste[0]['nom_article']);
-    // $art->setPrixArt($liste[0]['prix_article']);
-    // var_dump($art);
+
+$produit = new Produit(null,null,null,null,null);
+if(isset ($_POST['tri'])){
+    header('Location: /PharmaAndCie/produits?cat='.$_POST['category'].'');
+
+}
+if(isset($_GET['cat'])){
+    if($_GET['cat'] == 0){
+        $data = $produit->showAllProduits($bdd);
+    }
+    else{
+        // echo $_GET['cat'];
+        $data = $produit->ShowByCat($bdd,$_GET['cat']);
+    }
+
+}
+else{
+    // echo $_GET['cat'];
+    $data = $produit->showAllProduits($bdd);
+}
+
+$modelCatProduit = new CategorieProduit(null);
+$liste = $modelCatProduit->getAllCat($bdd);
+include './view/viewAllProduit.php';
+
 ?>
